@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "cdegimprstux",
   1: "mx",
   2: "e",
-  3: "cdegiprsux",
-  4: "x",
+  3: "cdegimprsux",
+  4: "mx",
   5: "t"
 };
 
