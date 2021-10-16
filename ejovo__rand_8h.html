@@ -84,6 +84,7 @@ $(function() {
 <code>#include &lt;sys/random.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div>
 <p><a href="ejovo__rand_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -105,8 +106,8 @@ Functions</h2></td></tr>
 <tr class="separator:aa4cd0b261b3c79e8393d111ea5300665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab60efacee6d1141acada9ed8ccc2ad82"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">rol64</a> (uint64_t x, int k)</td></tr>
 <tr class="separator:ab60efacee6d1141acada9ed8ccc2ad82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75fcabcf5453a30131323e430f694dac"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#a75fcabcf5453a30131323e430f694dac">seed_xoshiro256ss</a> (struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state)</td></tr>
-<tr class="separator:a75fcabcf5453a30131323e430f694dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e41f72a157b9325cb7f209c0b58fbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">seed_xoshiro256ss</a> (struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state)</td></tr>
+<tr class="separator:a1e41f72a157b9325cb7f209c0b58fbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0de3618ce2219dbb54728b24b9a665a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">print_xoshiro256ss_state</a> (struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state)</td></tr>
 <tr class="separator:af0de3618ce2219dbb54728b24b9a665a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8c33e5420596f7a1903881d679c0d1d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#aa8c33e5420596f7a1903881d679c0d1d">xoshiro256ss</a> (struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state)</td></tr>
@@ -304,14 +305,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a75fcabcf5453a30131323e430f694dac" name="a75fcabcf5453a30131323e430f694dac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75fcabcf5453a30131323e430f694dac">&#9670;&nbsp;</a></span>seed_xoshiro256ss()</h2>
+<a id="a1e41f72a157b9325cb7f209c0b58fbc1" name="a1e41f72a157b9325cb7f209c0b58fbc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e41f72a157b9325cb7f209c0b58fbc1">&#9670;&nbsp;</a></span>seed_xoshiro256ss()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ssize_t seed_xoshiro256ss </td>
+          <td class="memname">void seed_xoshiro256ss </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *&#160;</td>
           <td class="paramname"><em>state</em></td><td>)</td>
