@@ -76,43 +76,45 @@ $(function() {
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;sys/random.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structxoshiro256ss__state.html">   34</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    uint64_t s[4];</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">   36</a></span>} <a class="code hl_typedef" href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">xor_rng</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">extern</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xor_rng</a> XOSHIRO_RNG;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef linux</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &lt;sys/random.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    #include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structxoshiro256ss__state.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    uint64_t s[4];</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">   38</a></span>} <a class="code hl_typedef" href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">xor_rng</a>;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// Get x in [min, max]</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a2ebbbfa64178cd94914e8d91284bf1c6">   49</a></span><span class="comment"></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a2ebbbfa64178cd94914e8d91284bf1c6">get_rand_int_range</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// Get random x in [1, max]</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#aa4cd0b261b3c79e8393d111ea5300665">   60</a></span><span class="comment"></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#aa4cd0b261b3c79e8393d111ea5300665">get_rand_int</a>(<span class="keywordtype">int</span> max);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">// use more cryptographically secure functions to generate much better random numbers</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">   74</a></span><span class="comment"></span>uint64_t <a class="code hl_function" href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">rol64</a>(uint64_t x, <span class="keywordtype">int</span> k);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">   80</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">seed_xoshiro256ss</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> * state);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">   86</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">print_xoshiro256ss_state</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> * state);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#aa8c33e5420596f7a1903881d679c0d1d">   95</a></span>uint64_t <a class="code hl_function" href="ejovo__rand_8h.html#aa8c33e5420596f7a1903881d679c0d1d">xoshiro256ss</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a6b9550eee08d40936e1046c584c6e9b0">  102</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a6b9550eee08d40936e1046c584c6e9b0">get_int_xoshiro</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a9a12ebd4b2d566c762a60cd06a07bd72">  108</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a9a12ebd4b2d566c762a60cd06a07bd72">unif</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">  118</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">ejovo_seed</a>();</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">extern</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xor_rng</a> XOSHIRO_RNG;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// Get x in [min, max]</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a2ebbbfa64178cd94914e8d91284bf1c6">   51</a></span><span class="comment"></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a2ebbbfa64178cd94914e8d91284bf1c6">get_rand_int_range</a>(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// Get random x in [1, max]</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#aa4cd0b261b3c79e8393d111ea5300665">   62</a></span><span class="comment"></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#aa4cd0b261b3c79e8393d111ea5300665">get_rand_int</a>(<span class="keywordtype">int</span> max);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">// use more cryptographically secure functions to generate much better random numbers</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">   76</a></span><span class="comment"></span>uint64_t <a class="code hl_function" href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">rol64</a>(uint64_t x, <span class="keywordtype">int</span> k);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">seed_xoshiro256ss</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> * state);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">print_xoshiro256ss_state</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> * state);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#aa8c33e5420596f7a1903881d679c0d1d">   97</a></span>uint64_t <a class="code hl_function" href="ejovo__rand_8h.html#aa8c33e5420596f7a1903881d679c0d1d">xoshiro256ss</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a6b9550eee08d40936e1046c584c6e9b0">  104</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a6b9550eee08d40936e1046c584c6e9b0">get_int_xoshiro</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> *state);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a9a12ebd4b2d566c762a60cd06a07bd72">  110</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="ejovo__rand_8h.html#a9a12ebd4b2d566c762a60cd06a07bd72">unif</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">  120</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">ejovo_seed</a>();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aejovo__rand_8h_html_a058f59def35b0a6ec0e9dc5179fd5e12"><div class="ttname"><a href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">ejovo_seed</a></div><div class="ttdeci">void ejovo_seed()</div></div>
 <div class="ttc" id="aejovo__rand_8h_html_a1e41f72a157b9325cb7f209c0b58fbc1"><div class="ttname"><a href="ejovo__rand_8h.html#a1e41f72a157b9325cb7f209c0b58fbc1">seed_xoshiro256ss</a></div><div class="ttdeci">void seed_xoshiro256ss(struct xoshiro256ss_state *state)</div></div>
 <div class="ttc" id="aejovo__rand_8h_html_a2ebbbfa64178cd94914e8d91284bf1c6"><div class="ttname"><a href="ejovo__rand_8h.html#a2ebbbfa64178cd94914e8d91284bf1c6">get_rand_int_range</a></div><div class="ttdeci">int get_rand_int_range(int min, int max)</div></div>
@@ -123,7 +125,7 @@ $(function() {
 <div class="ttc" id="aejovo__rand_8h_html_ab60efacee6d1141acada9ed8ccc2ad82"><div class="ttname"><a href="ejovo__rand_8h.html#ab60efacee6d1141acada9ed8ccc2ad82">rol64</a></div><div class="ttdeci">uint64_t rol64(uint64_t x, int k)</div></div>
 <div class="ttc" id="aejovo__rand_8h_html_ad7c04ebd61669e043aab507852c174f6"><div class="ttname"><a href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">xor_rng</a></div><div class="ttdeci">struct xoshiro256ss_state xor_rng</div></div>
 <div class="ttc" id="aejovo__rand_8h_html_af0de3618ce2219dbb54728b24b9a665a"><div class="ttname"><a href="ejovo__rand_8h.html#af0de3618ce2219dbb54728b24b9a665a">print_xoshiro256ss_state</a></div><div class="ttdeci">void print_xoshiro256ss_state(struct xoshiro256ss_state *state)</div></div>
-<div class="ttc" id="astructxoshiro256ss__state_html"><div class="ttname"><a href="structxoshiro256ss__state.html">xoshiro256ss_state</a></div><div class="ttdef"><b>Definition:</b> ejovo_rand.h:34</div></div>
+<div class="ttc" id="astructxoshiro256ss__state_html"><div class="ttname"><a href="structxoshiro256ss__state.html">xoshiro256ss_state</a></div><div class="ttdef"><b>Definition:</b> ejovo_rand.h:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
