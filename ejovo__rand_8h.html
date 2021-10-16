@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TP3: inc/ejovo_rand.h File Reference</title>
+<title>TP4: inc/ejovo_rand.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TP3
+   <div id="projectname">TP4
    </div>
   </td>
  </tr>
@@ -90,11 +90,13 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to contain the 256 bits of state needed for xoshiro random number generation.  <a href="structxoshiro256ss__state.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ad7c04ebd61669e043aab507852c174f6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">xor_rng</a></td></tr>
+<tr class="memdesc:ad7c04ebd61669e043aab507852c174f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to contain the 256 bits of state needed for xoshiro random number generation.  <a href="ejovo__rand_8h.html#ad7c04ebd61669e043aab507852c174f6">More...</a><br /></td></tr>
 <tr class="separator:ad7c04ebd61669e043aab507852c174f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -139,7 +141,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Contain the 256 bits of state needed for xoshiro random number generation</p>
+
+<p>Structure to contain the 256 bits of state needed for xoshiro random number generation. </p>
 <p >The xorshiro algorithm is a class of <code>xorshift</code> algorithms that encorporates bit rotations and linear shifts combined with xor bit operations to create uniform random bits</p>
 <p >There is a global structure <code>XOSHIRO_RNG</code> that servers as a default rng for this module. To use it and the proceeding rng functions that rely on it, always remember to seed <code>XOSHIRO_RNG</code> by calling <code><a class="el" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">ejovo_seed()</a></code> in <code>main</code>. </p>
 
@@ -262,7 +265,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Print the 256 bits of state for an <a class="el" href="structxoshiro256ss__state.html">xoshiro256ss_state</a> structure </p>
+<p >Print the 256 bits of state for an <a class="el" href="structxoshiro256ss__state.html" title="Structure to contain the 256 bits of state needed for xoshiro random number generation.">xoshiro256ss_state</a> structure </p>
 
 </div>
 </div>

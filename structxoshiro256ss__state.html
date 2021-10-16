@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TP3: xoshiro256ss_state Struct Reference</title>
+<title>TP4: xoshiro256ss_state Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">TP3
+   <div id="projectname">TP4
    </div>
   </td>
  </tr>
@@ -69,6 +69,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Structure to contain the 256 bits of state needed for xoshiro random number generation.  
+ <a href="structxoshiro256ss__state.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="ejovo__rand_8h_source.html">ejovo_rand.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -78,7 +81,7 @@ uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>s</b> [4]</td></t
 <tr class="separator:a7c1abb6555eeabb9daf74c2b4b8a9b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Contain the 256 bits of state needed for xoshiro random number generation</p>
+<div class="textblock"><p >Structure to contain the 256 bits of state needed for xoshiro random number generation. </p>
 <p >The xorshiro algorithm is a class of <code>xorshift</code> algorithms that encorporates bit rotations and linear shifts combined with xor bit operations to create uniform random bits</p>
 <p >There is a global structure <code>XOSHIRO_RNG</code> that servers as a default rng for this module. To use it and the proceeding rng functions that rely on it, always remember to seed <code>XOSHIRO_RNG</code> by calling <code><a class="el" href="ejovo__rand_8h.html#a058f59def35b0a6ec0e9dc5179fd5e12">ejovo_seed()</a></code> in <code>main</code>. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
