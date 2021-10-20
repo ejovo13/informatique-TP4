@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xoshiro256ss_5fstate_0',['xoshiro256ss_state',['../structxoshiro256ss__state.html',1,'']]]
+  ['mat_5ft_0',['mat_t',['../structmat__t.html',1,'']]]
 ];
